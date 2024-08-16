@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Counter from "./components/Counter";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Balance from "./components/Balance";
 
 import { login, logout } from "./actions";
 function App() {
@@ -11,17 +12,9 @@ function App() {
   return (
     <>
       <Counter />
-      {isLoggedIn ? (
-        <div>
-          <h1>Logged In</h1>
-          <button onClick={() => dispatch(logout())}>Logout</button>
-        </div>
-      ) : (
-        <div>
-          <h1>Logged Out</h1>
-          <button onClick={() => dispatch(login())}>Login</button>
-        </div>
-      )}
+      <h1>Login Page</h1>
+      <Login />
+      <Balance />
     </>
   );
 }
